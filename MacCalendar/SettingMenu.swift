@@ -44,7 +44,7 @@ class SettingMenu: NSMenu {
         let style = NSMutableParagraphStyle()
         style.alignment = .center
         
-        let abbr = [ NSAttributedStringKey.foregroundColor: NSColor.black , NSAttributedStringKey.paragraphStyle : style, NSAttributedStringKey.font : NSFont.systemFont(ofSize: 11.0)]
+        let abbr = [ NSAttributedString.Key.foregroundColor: NSColor.black , NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.font : NSFont.systemFont(ofSize: 11.0)]
         
         let infoAttributedStr = NSAttributedString(string: "report: bugcoding@hotmail.com", attributes: abbr)
         

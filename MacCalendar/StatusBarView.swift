@@ -44,14 +44,14 @@ class StatusBarView: NSView, NibLoadable {
         let size = self.image.size
         
         // 日期文本
-        let dayAttrDict = [NSAttributedStringKey.foregroundColor : NSColor.black, NSAttributedStringKey.paragraphStyle : style, NSAttributedStringKey.font : NSFont.systemFont(ofSize: 9.8)]
+        let dayAttrDict = [NSAttributedString.Key.foregroundColor : NSColor.black, NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.font : NSFont.systemFont(ofSize: 9.8)]
         let dayString = NSString(string: day)
         var rect = CGRect(x: 2, y: 1.5, width: size.width, height: size.height - 5.5)
         
         dayString.draw(in: rect, withAttributes: dayAttrDict)
         
         // 星期文字
-        let weekAttrDict = [NSAttributedStringKey.foregroundColor : NSColor.white, NSAttributedStringKey.paragraphStyle : style, NSAttributedStringKey.font : NSFont.systemFont(ofSize: 3.9)]
+        let weekAttrDict = [NSAttributedString.Key.foregroundColor : NSColor.white, NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.font : NSFont.systemFont(ofSize: 3.9)]
         let weekString = NSString(string: week)
         rect = CGRect(x: 2, y: 2.3, width: size.width, height: size.height)
         weekString.draw(in: rect , withAttributes: weekAttrDict)
@@ -65,7 +65,7 @@ class StatusBarView: NSView, NibLoadable {
 
         let style = NSMutableParagraphStyle()
         style.alignment = .center
-        let timeAttr = [NSAttributedStringKey.foregroundColor : NSColor.black, NSAttributedStringKey.paragraphStyle : style, NSAttributedStringKey.font : NSFont.systemFont(ofSize: 15.8)]
+        let timeAttr = [NSAttributedString.Key.foregroundColor : NSColor.black, NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.font : NSFont.systemFont(ofSize: 15.8)]
         let timeString = NSString(string: getCurrentTime())
         let rect = CGRect(x: 21, y: -2, width: 80, height: 22)
         timeString.draw(in: rect, withAttributes: timeAttr)
@@ -83,7 +83,7 @@ class StatusBarView: NSView, NibLoadable {
     
     func initItem(imageName: String, item: NSStatusItem) {
         
-        self.image = NSImage(named: NSImage.Name(rawValue: imageName))!
+        self.image = NSImage(named: imageName)!
         
         self.item = item
 //        self.item.length = 100

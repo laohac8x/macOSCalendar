@@ -153,8 +153,8 @@ class CalendarCellView : NSButton, NSMenuDelegate{
         
         let topText = String(wzDay.day) + "\n"
 
-        let goriDayDict = [NSAttributedStringKey.foregroundColor : topColor, NSAttributedStringKey.paragraphStyle : style, NSAttributedStringKey.font : NSFont.systemFont(ofSize: 18.0)]
-        let lunarDayDict = [NSAttributedStringKey.foregroundColor : bottomColor, NSAttributedStringKey.paragraphStyle : style, NSAttributedStringKey.font : NSFont.systemFont(ofSize: 9.0)]
+        let goriDayDict = [NSAttributedString.Key.foregroundColor : topColor, NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.font : NSFont.systemFont(ofSize: 18.0)]
+        let lunarDayDict = [NSAttributedString.Key.foregroundColor : bottomColor, NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.font : NSFont.systemFont(ofSize: 9.0)]
         
         let goriAttrDay = NSAttributedString(string: (topText as NSString).substring(with: NSMakeRange(0, topText.count)), attributes: goriDayDict)
         let lunarAttrDay = NSAttributedString(string: (bottomText as NSString).substring(with: NSMakeRange(0, bottomText.count)), attributes: lunarDayDict)

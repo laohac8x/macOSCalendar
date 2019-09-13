@@ -37,8 +37,12 @@ class LunarCalendarUtils {
         mMonthInfo.removeAll()
         mChnMonthInfo.removeAll()
         
-        mSolarTermsJD = mSolarTermsJD.flatMap{$0 * 0.0}
-        mNewMoonJD = mNewMoonJD.flatMap{$0 * 0.0}
+        mSolarTermsJD = mSolarTermsJD.compactMap({ element -> Double in
+            return element * 0.0
+        })
+        mNewMoonJD = mNewMoonJD.compactMap({ element -> Double in
+            return element * 0.0
+        })
         mInit = false
     }
     

@@ -133,7 +133,7 @@ class SettingWindowController : NSWindowController, NSWindowDelegate {
     
     
     override var windowNibName: NSNib.Name? {
-        return NSNib.Name("SettingWindowController")
+        return "SettingWindowController"
     }
     
     override func windowDidLoad() {

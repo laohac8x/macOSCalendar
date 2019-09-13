@@ -68,7 +68,7 @@ class ToolsWindowController : NSWindowController, NSWindowDelegate {
     
     
     override var windowNibName: NSNib.Name? {
-        return NSNib.Name("ToolsWindowController")
+        return "ToolsWindowController"
     }
     
     // 初始化公历日期与月份

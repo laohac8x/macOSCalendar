@@ -61,7 +61,7 @@ class CalendarViewController: NSWindowController, NSTextFieldDelegate {
     
     @IBOutlet weak var nextHolidayDays: NSTextField!
     override var windowNibName: NSNib.Name?{
-        return NSNib.Name("CalendarViewController")
+        return "CalendarViewController"
     }
     
     // MARK: Button handler
@@ -324,7 +324,7 @@ class CalendarViewController: NSWindowController, NSTextFieldDelegate {
     func showRightDetailInfo(wzTime: CalendarUtils.WZDayTime) {
         // 获取每月第一天是周几
         let curWeekDay = CalendarUtils.sharedInstance.getWeekDayBy(mCurYear, month: mCurMonth, day: mCurDay)
-        dateDetailLabel.stringValue = String(mCurYear) + "年" + String(mCurMonth) + "月" + String(mCurDay) + "日 星期" + CalendarConstant.WEEK_NAME_OF_CHINESE[curWeekDay]
+        dateDetailLabel.stringValue = String(mCurDay) + "/" + String(mCurMonth) + "/" + String(mCurYear) + " " + CalendarConstant.WEEK_NAME_OF_CHINESE[curWeekDay]
         dayLabel.stringValue = String(mCurDay)
         
         // 右侧农历详情
@@ -371,7 +371,7 @@ class CalendarViewController: NSWindowController, NSTextFieldDelegate {
         let lunarStr = "\(CalendarConstant.HEAVENLY_STEMS_NAME[stems - 1])\(CalendarConstant.EARTHY_BRANCHES_NAME[branches])【\(CalendarConstant.CHINESE_ZODIC_NAME[branches])】年"
         lunarYearLabel.stringValue = lunarStr + monthHeavenEarthy.heaven + monthHeavenEarthy.earthy + "月" + dayHeavenEarthy.heaven + dayHeavenEarthy.earthy + "日"
         
-        imageView.image = NSImage(named: NSImage.Name(rawValue: CalendarConstant.CHINESE_ZODIC_PNG_NAME[branches]))
+        imageView.image = NSImage(named: CalendarConstant.CHINESE_ZODIC_PNG_NAME[branches])
 //        poemLabel.stringValue = CalendarConstant.LAST_POEM[branches - 1]
 //        nextPoemLabel.stringValue = CalendarConstant.NEXT_POEM[branches - 1]
         

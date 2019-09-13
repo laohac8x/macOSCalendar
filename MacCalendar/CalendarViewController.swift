@@ -420,7 +420,7 @@ class CalendarViewController: NSWindowController, NSTextFieldDelegate {
         let chnMonthInfo = cal.getChnMonthInfo(month: dayInfo.mmonth)
         
         // 农历日期/节气
-        maxPriorityHolidayName = getLunarDayName(dayInfo: dayInfo, cal: cal)
+        maxPriorityHolidayName = CalendarConstant.nameOfChnDay[dayInfo.mdayNo]
         if dayInfo.st != -1 {
             isFestvial = true
         }
@@ -428,15 +428,19 @@ class CalendarViewController: NSWindowController, NSTextFieldDelegate {
         // 公历节日
         let holidayName = CalendarUtils.sharedInstance.getHolidayNameBy(month: month, day: day)
         if holidayName != "" && holidayName.count <= 4 {
-            maxPriorityHolidayName = holidayName
+//            maxPriorityHolidayName = holidayName
             isFestvial = true
         }
         
         // 农历节日
         let festivalName = CalendarUtils.sharedInstance.getLunarFestivalNameBy(month: chnMonthInfo.mInfo.mname, day: dayInfo.mdayNo + 1)
         if festivalName != "" {
-            maxPriorityHolidayName = festivalName
+//            maxPriorityHolidayName = festivalName
             isFestvial = true
+        }
+        
+        if dayInfo.mdayNo == 0 {
+            maxPriorityHolidayName += "/\(mi.mInfo.month)"
         }
         
         return (maxPriorityHolidayName, isFestvial)

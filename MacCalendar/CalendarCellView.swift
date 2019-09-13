@@ -18,6 +18,8 @@ class CalendarCellView : NSButton, NSMenuDelegate{
     var wzDay: CalendarUtils.WZDayTime = CalendarUtils.WZDayTime(0, 0, 0)
     // 当前是否是带标记日期
     var mIsFlagDate: Bool = false
+    let solarLabel = NSTextField()
+    let lunarLabel = NSTextField()
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -30,6 +32,20 @@ class CalendarCellView : NSButton, NSMenuDelegate{
         // 设置鼠标进出跟踪区域
         let trackingArea = NSTrackingArea(rect: self.bounds, options: [NSTrackingArea.Options.activeAlways,NSTrackingArea.Options.mouseEnteredAndExited], owner: self, userInfo: nil)
         self.addTrackingArea(trackingArea)
+        
+        self.addSubview(lunarLabel)
+        lunarLabel.isEditable = false
+        lunarLabel.frame = CGRect(x: self.bounds.width / 2, y: self.bounds.height * 0.635, width: self.bounds.width / 2, height: self.bounds.height / 2)
+        lunarLabel.alignment = .center
+        lunarLabel.backgroundColor = NSColor.clear
+        lunarLabel.isBordered = false
+        
+        self.addSubview(solarLabel)
+        solarLabel.isEditable = false
+        solarLabel.frame = CGRect(x: 0, y: self.bounds.height * 0.1, width: self.bounds.width, height: self.bounds.height * 0.8)
+        solarLabel.alignment = .center
+        solarLabel.backgroundColor = NSColor.clear
+        solarLabel.isBordered = false
     }
     
     func setBackGroundColor(bgColor: NSColor) {
@@ -143,7 +159,7 @@ class CalendarCellView : NSButton, NSMenuDelegate{
         let info = LocalDataManager.sharedInstance.getCurDateFlag(wzDay: wzDay)
         if info != "" {
             addFlagView(extraTip: "备", isShift: isShift, color: NSColor.blue)
-            self.toolTip = "备注: " + info
+            self.toolTip = "Remark: " + info
         }
         
         // 居中样式
@@ -151,7 +167,7 @@ class CalendarCellView : NSButton, NSMenuDelegate{
         
         style.alignment = .center
         
-        let topText = String(wzDay.day) + "\n"
+        let topText = String(wzDay.day)
 
         let goriDayDict = [NSAttributedString.Key.foregroundColor : topColor, NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.font : NSFont.systemFont(ofSize: 18.0)]
         let lunarDayDict = [NSAttributedString.Key.foregroundColor : bottomColor, NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.font : NSFont.systemFont(ofSize: 9.0)]
@@ -159,11 +175,7 @@ class CalendarCellView : NSButton, NSMenuDelegate{
         let goriAttrDay = NSAttributedString(string: (topText as NSString).substring(with: NSMakeRange(0, topText.count)), attributes: goriDayDict)
         let lunarAttrDay = NSAttributedString(string: (bottomText as NSString).substring(with: NSMakeRange(0, bottomText.count)), attributes: lunarDayDict)
 
-        let finalAttr = NSMutableAttributedString(attributedString: goriAttrDay)
-        finalAttr.append(lunarAttrDay)
-        
-        self.attributedTitle = finalAttr
+        solarLabel.attributedStringValue = goriAttrDay
+        lunarLabel.attributedStringValue = lunarAttrDay
     }
-    
-    
 }

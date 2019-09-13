@@ -195,7 +195,7 @@ class CalendarConstant{
     
     // 农历日显示名称
     static let nameOfChnDay:[String] = [
-        "Mồng một","Mồng hai","Mồng ba","Mồng bốn","Mồng năm","Mồng sáu","Mồng bảy","Mồng tám","Mồng chín","Mồng mười",
+        "1","2","3","4","5","6","7","8","9","10",
         "11","12","13","14","15","16","17","18","19","20",
         "21","22","23","24","25","26","27","28","29","30"
     ]

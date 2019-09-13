@@ -127,13 +127,13 @@ class CalendarConstant{
     
     // 农历节日字典表
     static let lunarHolidaysDict:[String:String] = [
-        "1-1": "春节",
+        "1-1": "Tết âm lịch",
         "1-15": "元宵节",
         "2-2": "龙头节",
         "5-5": "端午节",
         "7-7": "七夕节",
         "7-15": "鬼节",
-        "8-15": "中秋节",
+        "8-15": "Tết trung thu",
         "9-9": "重阳节",
         "12-8": "腊八节",
         "12-23": "小年",
@@ -143,16 +143,15 @@ class CalendarConstant{
     // 常用节日
     // month * 100 + day * 10
     static let generalHolidaysDict:[Int:(String, Int, Int)] = [
-        101: ("元旦", 1, 1),
-        214: ("情人节", 2, 14),
-        308: ("妇女节", 3, 8),
-        401: ("愚人节", 4, 1),
-        501: ("劳动节", 5, 1),
-        601: ("儿童节", 6, 1),
-        910: ("教师节", 9, 10),
-        1001: ("国庆节", 10, 1),
-        1224: ("平安夜", 12, 24),
-        1225: ("圣诞节", 12, 25)
+        101: ("Ngày đầu năm mới", 1, 1),
+        214: ("Lễ tình nhân", 2, 14),
+        308: ("Quốc tế phụ nữ", 3, 8),
+        401: ("Ngày cá tháng tư", 4, 1),
+        501: ("Quốc tế lao động", 5, 1),
+        601: ("Tết thiếu nhi", 6, 1),
+        1020: ("Ngày nhà giáo Việt Nam", 10, 20),
+        1224: ("Đêm Giáng sinh", 12, 24),
+        1225: ("Giáng sinh", 12, 25)
     ]
     static let generalHolidaysArray:[Int] = [
         101,
@@ -161,8 +160,7 @@ class CalendarConstant{
         401,
         501,
         601,
-        910,
-        1001,
+        1020,
         1224,
         1225
     ]
@@ -197,12 +195,12 @@ class CalendarConstant{
     
     // 农历日显示名称
     static let nameOfChnDay:[String] = [
-        "初一","初二","初三","初四","初五","初六","初七","初八","初九","初十",
-        "十一","十二","十三","十四","十五","十六","十七","十八","十九","二十",
-        "廿一","廿二","廿三","廿四","廿五","廿六","廿七","廿八","廿九","三十"
+        "Mồng một","Mồng hai","Mồng ba","Mồng bốn","Mồng năm","Mồng sáu","Mồng bảy","Mồng tám","Mồng chín","Mồng mười",
+        "11","12","13","14","15","16","17","18","19","20",
+        "21","22","23","24","25","26","27","28","29","30"
     ]
     // 农历月份名称
-    static let nameOfChnMonth:[String] = ["正","二","三","四","五","六","七","八","九","十","冬","腊"]
+    static let nameOfChnMonth:[String] = ["Tháng giêng","Tháng hai","Tháng ba","Tháng tư","Tháng năm","Tháng sáu","Tháng bảy","Tháng tám","Tháng chín","Tháng mười","Tháng mười một","Tháng chạp"]
     
     // 节气名称
     static let nameOfJieQi:[String] = [

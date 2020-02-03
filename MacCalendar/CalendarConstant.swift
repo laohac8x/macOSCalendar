@@ -40,7 +40,7 @@ class CalendarConstant{
     static let DAYS_OF_MONTH_NORMAL_YEAR = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     
     // 星期汉字
-    static let WEEK_NAME_OF_CHINESE = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    static let WEEK_NAME_OF_CHINESE = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
     
     // 农历天干地支
     static let HEAVENLY_STEMS_NAME = ["甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"]
@@ -55,7 +55,7 @@ class CalendarConstant{
     static let NEXT_POEM = ["生肖鼠占头", "人效拓荒牛", "风虎浴清泉", "庭院绽红梅", "风敲月下门", "蛇来灵气生", "路遥任马驰", "百鸟唤春光", "余鲤戏春波", "报午必三鸣", "鸡鸣玉宇生辉", "却居六畜先"]
     
     // 英文星期缩写
-    static let WEEK_SHORT_CUT = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
+    static let WEEK_SHORT_CUT = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
     
     // 每年月数
     static let MONTHES_FOR_YEAR = 12

@@ -255,7 +255,7 @@ class CalendarViewController: NSWindowController, NSTextFieldDelegate {
                     lastRowNum = Int((btn.mCellID - 1) / 7) + 1
                 }
                 
-                let day = index - weekDayOf1stDay + 1
+                let day = index - weekDayOf1stDay + 2
                 //btn.title = "\(index - weekDayOf1stDay + 1)"
                 
 
@@ -273,7 +273,7 @@ class CalendarViewController: NSWindowController, NSTextFieldDelegate {
                 btn.setString(wzTime: CalendarUtils.WZDayTime(mCurYear, mCurMonth, day), topColor: .black, bottomText: dayName, bottomColor: color)
                 
                 // 处理周六日的日期颜色
-                if index % 7 == 6 || index % 7 == 0 {
+                if index % 7 == 5 || index % 7 == 6 {
    
                     if isFestival {
                         btn.setString(wzTime: CalendarUtils.WZDayTime(mCurYear, mCurMonth, day), topColor: holidayColor, bottomText: dayName, bottomColor: color)

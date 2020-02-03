@@ -1,2 +1,59 @@
-Breakpoints_v2.xcbkptlist
-UserInterfaceState.xcuserstate
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+# Mac
+*.DS_Store
+.DS_Store
+
+## User settings
+xcuserdata/
+*.xcworkspace/xcshareddata/
+## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
+*.xcscmblueprint
+*.xccheckout
+*.xcworkspace/xcuserdata/*.*
+
+## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
+build/
+DerivedData/
+*.app.dSYM.zip
+*.ipa
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+swiftlint_report.html
+swiftlint_report.xml
+report.xml
+
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+!default.perspectivev3
+
+## Xcode Patch
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+
+# Ignore CocoaPods installed files
+Pods/
+R.generated.swift
+Podfile.lock
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/#source-control
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+fastlane/*.md
+
+# Secret configs
+*.xcconfig
+SecretConfigs/*.*
